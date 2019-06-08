@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+    
+    <form-beans>
+        <!-- 1)商品一覧画面を表示するためのForm -->
+        <form-bean name="CatalogForm" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="offset" type="java.lang.Integer" />
+        </form-bean>
+
+        <!-- 2)商品詳細画面を表示するためのForm -->
+        <!-- 3)商品をカートに入れるためのForm -->
+        <form-bean name="CatalogDetailForm" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="id" type="java.lang.Integer" />
+        </form-bean>
+        
+        <!-- 4)カートに入った商品の数を変更するForm -->
+       <form-bean name="ChangeCountForm" type="action.form.CartCountForm" />
+       
+       <!-- 5)カートに入った商品を購入するために購入内容確認画面に表示するためのForm -->
+       <!-- 6)カート一覧表示画面を表示するためのForm -->
+       <form-bean name="CartForm" type="org.apache.struts.action.DynaActionForm" />
+       
+       <!-- 7)カート内容をデータベースに格納処理をおこなうForm -->
+       <form-bean name="CommitCartForm" type="org.apache.struts.action.DynaActionForm" />
+
+       <!-- 8)ログイン・ログアウトをおこなうForm -->
+       <form-bean name="AuthForm" type="org.apache.struts.action.DynaActionForm" /> 
+    
+       <!-- 9) 会員登録画面を表示するためのForm -->
+       <form-bean name="MemberShowForm" type="org.apache.struts.action.DynaActionForm" />  
+
+       <!-- 10) 会員登録をおこなうためのForm -->
+       <form-bean name="MemberEntryForm" type="action.form.MemberEntryForm" />
+       
+       <!-- 11)　マスタ変更画面を表示するためのForm -->
+       <!-- 12)  マスタ登録画面を表示するためのForm -->
+       <form-bean name="EntryProductShowForm" type="org.apache.struts.action.DynaActionForm" />
+       
+       <!-- 13)  マスタ更新処理をおこなうためのForm -->
+       <form-bean name="CatalogMainForm" type="action.form.MasterMainForm" />
+
+       <!-- 14)  マスタ登録処理をおこなうためのForm -->
+       <form-bean name="EntryProductForm" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="name" type="java.lang.String" />
+         <form-property name="detail" type="java.lang.String" />
+         <form-property name="price" type="java.lang.Integer" />
+         <form-property name="pictureUrl" type="java.lang.String" />
+         <form-property name="upload" type="org.apache.struts.upload.FormFile" />        
+       </form-bean>       
+      
+       <!-- 15) キーワード検索をおこなうためのForm -->        
+       <form-bean name="KeyWordForm" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="keyword" type="java.lang.String" />
+       </form-bean>
+    </form-beans>
+    
+    <global-exceptions>
+       <exception key="error.already" type="logic.exception.AlreadyEntryException" path="member" />
+    </global-exceptions>
+    
+    <action-mappings>
+       
+       <!-- 16) 商品一覧画面を表示するアクション -->
+       <action name="CatalogForm" path="/Catalog" type="action.catalog.CatalogShowAction">
+          <forward name="show" path="catalog" />
+       </action>
+
+       <!-- 17) 商品一覧画面をスクロールするアクション -->        
+       <action name="CatalogForm" path="/CatalogPage" type="action.catalog.CatalogPageAction" parameter="action">
+          <forward name="show" path="catalog" />
+       </action>
+       
+       <!-- 18) 商品詳細画面を表示するアクション -->    
+       <action name="CatalogDetailForm" path="/CatalogDetail" type="action.catalog.CatalogDetailShowAction">
+          <forward name="show" path="product" />
+        </action>
+        
+       <!-- 19) 商品をカートに入れるアクション　--> 
+       <action name="CatalogDetailForm" path="/members/AddCart" type="action.cart.ShoppingCartAction">
+          <forward name="cart" path="cart" />
+       </action>
+       
+       <!-- 20) カートの数量を変更するアクション --> 
+       <action name="ChangeCountForm" path="/members/ChangeCount" type="action.cart.ChangeCountAction">
+          <forward name="cart" path="cart" />
+       </action>
+       
+       <!-- 21) カートの内容を確認するアクション -->
+       <action name="CartForm" path="/members/ConfirmCart" type="org.apache.struts.actions.ForwardAction" parameter="confirm" />
+       
+       <!-- 22)  カートの内容をデータベースに格納するアクション --> 
+       <action name="CommitCartForm" path="/members/CommitCart" type="action.cart.CommitCartAction">
+          <forward name="success" path="commit" />
+          <forward name="twice" path="twice" />
+       </action>
+       
+       <!-- 23)　カートを一覧表示するアクション -->
+       <action name="CartForm" path="/members/Cart" type="action.cart.CartShowAction" >
+          <forward name="cart" path="cart" />
+       </action>
+
+       <!-- 24)　ログインするアクション -->
+       <action name="AuthForm" path="/members/Login" type="action.auth.LoginAction" >
+          <forward name="catalog" path="catalog" />
+       </action>
+        
+       <!-- 25)　ログアウトするアクション -->
+       <action name="AuthForm" path="/members/LogOut" type="action.auth.LogOutAction" >
+          <forward name="index" path="catalog" />
+       </action>
+        
+       <!-- 26)　会員登録画面を表示するアクション -->
+       <action name="MemberShowForm" path="/MemberEntryShow" type="org.apache.struts.actions.ForwardAction" parameter="member" />
+       
+       <!-- 27)  会員登録をするアクション -->
+       <action name="MemberEntryForm" type="action.member.MemberEntryAction" path="/MemberEntry" >
+          <forward name="success" path="membercomplete"/>
+       </action>       
+       
+       <!-- 28)　マスタ更新画面を表示するアクション -->
+       <action name="EntryProductShowForm" path="/admin/MasterMain" type="action.catalog.MasterMainAction" >
+          <forward name="list" path="admin" />
+       </action>
+       
+       <!-- 29)  マスタ更新をおこなうアクション -->
+       <action name="CatalogMainForm" path="/admin/MasterChange" type="action.catalog.MasterChangeAction" >
+                 <forward name="list" path="admin" />
+       </action>
+       
+       <!-- 30)  マスタ追加画面を表示するアクション -->
+       <action name="EntryProductShowForm" path="/admin/EntryShow" type="org.apache.struts.actions.ForwardAction" parameter="entryshow" />
+       
+       <!-- 31)  マスタ登録をおこなうアクション -->
+       <action name="EntryProductForm" path="/admin/EntryProduct" type="action.catalog.EntryProductAction" >
+          <forward name="list" path="admin" />
+       </action>
+       
+       <!-- 32)  キーワード検索処理をおこなうアクション -->   
+       <action name="KeyWordForm" path="/KeywordSearch" type="action.catalog.SearchProductAction" >
+            <forward name="list" path="catalog" />
+       </action>
+    </action-mappings>
+    
+    <message-resources parameter="ApplicationResources" />
+    
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+     <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+    </plug-in>
+</struts-config>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN" "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+   <!-- 商品一覧画面 -->
+   <definition name="catalog" path="/WEB-INF/view/template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>	
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>      
+       <put name="main" value="/WEB-INF/view/catalog.jsp"/>
+       <put name="search" value="/WEB-INF/view/search.jsp"/>
+   </definition>
+	
+   <!-- 商品詳細画面 -->
+   <definition name="product" path="/WEB-INF/view/template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>       
+       <put name="main" value="/WEB-INF/view/catalogDetail.jsp"/>
+       <put name="search" value="/WEB-INF/view/search.jsp"/>
+    </definition>
+	
+    <!-- カート一覧画面　-->
+    <definition name="cart" path="/WEB-INF/view/no_search_template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>   
+       <put name="main" value="cart.jsp"/>
+    </definition>
+	
+    <!-- 購入確認画面 -->
+    <definition name="confirm" path="/WEB-INF/view/no_search_template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>   
+       <put name="main" value="/WEB-INF/view/confirm.jsp"/>
+    </definition>
+	
+    <!-- 購入終了画面 -->
+    <definition name="commit" path="/WEB-INF/view/no_search_template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>   
+       <put name="main" value="/WEB-INF/view/commit.jsp"/>
+    </definition>
+	
+    <!-- 複数回購入エラー画面  -->
+    <definition name="twice" path="/WEB-INF/view/no_search_template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>   
+       <put name="main" value="/WEB-INF/view/twice.jsp"/>
+    </definition>
+	
+    <!-- 会員登録画面  -->
+    <definition name="member" path="/WEB-INF/view/template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>	
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>      
+       <put name="main" value="/WEB-INF/view/memberEntry.jsp"/>
+       <put name="search" value="/WEB-INF/view/search.jsp"/>
+    </definition>
+	
+    <!-- 会員登録終了画面  -->
+    <definition name="membercomplete" path="/WEB-INF/view/template.jsp">
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>	
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>      
+       <put name="main" value="/WEB-INF/view/complete.jsp"/>
+       <put name="search" value="/WEB-INF/view/search.jsp"/>
+    </definition>
+   
+    <!-- マスタ更新画面  -->
+    <definition name="admin" path="/WEB-INF/view/admin_template.jsp">
+       <put name="header" value="/WEB-INF/view/admin_header.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>   
+       <put name="main" value="/WEB-INF/view/master.jsp"/>
+    </definition>
+	
+    <!--  マスタ追加更新  -->
+    <definition name="entryshow" path="/WEB-INF/view/admin_template.jsp">
+       <put name="header" value="/WEB-INF/view/admin_header.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>   
+       <put name="main" value="/WEB-INF/view/entryProduct.jsp"/>
+    </definition>
+
+</tiles-definitions>
