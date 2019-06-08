@@ -1,5 +1,4 @@
 <%@page contentType="text/html; charset=utf-8" %>
-
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>
 <HTML>
 	<head>
@@ -8,6 +7,7 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 	</head>
   <BODY>
+  	<tiles:insert attribute="preprocess"/>
     <TABLE width="800" border="0">
       <TR>
         <TD width="800" align="center">
