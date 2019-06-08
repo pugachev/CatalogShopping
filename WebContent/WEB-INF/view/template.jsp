@@ -5,7 +5,7 @@
 	<head>
 		<script src="${pageContext.request.contextPath}/js/jquery-2.2.4.js"></script>
 		<script src="${pageContext.request.contextPath}/js/jquery.colorbox-min.js"></script>
-
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 	</head>
   <BODY>
     <TABLE width="800" border="0">

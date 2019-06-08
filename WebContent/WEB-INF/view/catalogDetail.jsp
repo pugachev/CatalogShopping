@@ -9,7 +9,8 @@
 			});
 			$(function() {
 				$(".inline_box").colorbox({
-					inline: true
+					inline: true,
+					opacity:0.8
 				});
 			});
 		</script>
@@ -45,6 +46,6 @@
 
    <div style="display:none">
 	    <div id="inline_content">
-	        <p><img id="cbimg" src=""></p>
+	        <p><img id="cbimg" src="" width="100%"></p>
 	    </div>
 	</div>
