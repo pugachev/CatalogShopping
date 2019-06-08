@@ -3,7 +3,16 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
+		<script>
+			$(window).load(function() {
+				$('#inline_content img').attr('src',$('a.inline_box.cboxElement img')[0].currentSrc);
+			});
+			$(function() {
+				$(".inline_box").colorbox({
+					inline: true
+				});
+			});
+		</script>
   <TABLE border="0" width="400" height="200" >
      <TR width="400" bgColor=#bb5a5a valigh="top">
       <TH height="20"><FONT color=#ffffff>番号</FONT></TH>
@@ -18,8 +27,12 @@
       <TR width="400" height="160" >
        <bean:define id="url" >
         <bean:write name="product" property="pictureUrl" />
-       </bean:define>      
-       <TD colspan="3" ><html:img page="<%= url %>" /></TD>
+       </bean:define>
+       <TD colspan="3" >
+	       <a href="#inline_content" class="inline_box">
+	       	<html:img page="<%= url %>" />
+	       </a>
+       </TD>
       </TR>
    </TABLE>
    <html:form action="/members/AddCart">
@@ -29,3 +42,9 @@
     <html:hidden property="id" value="<%= pId %>" />
     <html:image pageKey="addcart.image" />この商品をカートに入れる。
    </html:form>
+
+   <div style="display:none">
+	    <div id="inline_content">
+	        <p><img id="cbimg" src=""></p>
+	    </div>
+	</div>

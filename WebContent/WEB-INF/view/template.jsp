@@ -2,6 +2,11 @@
 
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles"%>
 <HTML>
+	<head>
+		<script src="${pageContext.request.contextPath}/js/jquery-2.2.4.js"></script>
+		<script src="${pageContext.request.contextPath}/js/jquery.colorbox-min.js"></script>
+
+	</head>
   <BODY>
     <TABLE width="800" border="0">
       <TR>
@@ -11,12 +16,12 @@
       </TR>
       <TR height="20" widht="800" >
        <TD>
-          <tiles:insert attribute="login"/> 
-       </TD>         
+          <tiles:insert attribute="login"/>
+       </TD>
       <TR>
       <TR>
         <TD valign="top" width="150" >
-          <tiles:insert attribute="menu"/>        
+          <tiles:insert attribute="menu"/>
         </TD>
         <TD align="left" width="400" valign="top" >
           <tiles:insert attribute="main"/>
