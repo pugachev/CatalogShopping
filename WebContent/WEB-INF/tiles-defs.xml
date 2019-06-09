@@ -4,7 +4,7 @@
 <tiles-definitions>
    <!-- 商品一覧画面 -->
    <definition name="catalog" path="/WEB-INF/view/template.jsp">
-   <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+   <put name="preprocess" value="/WEB-INF/view/preCatalog.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -14,7 +14,7 @@
 
    <!-- 商品詳細画面 -->
    <definition name="product" path="/WEB-INF/view/template.jsp">
-   	   <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+   	   <put name="preprocess" value="/WEB-INF/view/preDetail.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -24,7 +24,7 @@
 
     <!-- カート一覧画面　-->
     <definition name="cart" path="/WEB-INF/view/no_search_template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preCart.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -33,7 +33,7 @@
 
     <!-- 購入確認画面 -->
     <definition name="confirm" path="/WEB-INF/view/no_search_template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preConfirm.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -42,7 +42,7 @@
 
     <!-- 購入終了画面 -->
     <definition name="commit" path="/WEB-INF/view/no_search_template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preComplete.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -51,7 +51,7 @@
 
     <!-- 複数回購入エラー画面  -->
     <definition name="twice" path="/WEB-INF/view/no_search_template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preError.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -60,7 +60,7 @@
 
     <!-- 会員登録画面  -->
     <definition name="member" path="/WEB-INF/view/template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preRegist.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -70,7 +70,7 @@
 
     <!-- 会員登録終了画面  -->
     <definition name="membercomplete" path="/WEB-INF/view/template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preRegistComplete.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
@@ -80,7 +80,7 @@
 
     <!-- マスタ更新画面  -->
     <definition name="admin" path="/WEB-INF/view/admin_template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preMaster.jsp"/>
        <put name="header" value="/WEB-INF/view/admin_header.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
        <put name="main" value="/WEB-INF/view/master.jsp"/>
@@ -88,7 +88,7 @@
 
     <!--  マスタ追加更新  -->
     <definition name="entryshow" path="/WEB-INF/view/admin_template.jsp">
-       <put name="preprocess" value="/WEB-INF/view/include.jsp"/>
+       <put name="preprocess" value="/WEB-INF/view/preMasterUpdate.jsp"/>
        <put name="header" value="/WEB-INF/view/admin_header.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
        <put name="main" value="/WEB-INF/view/entryProduct.jsp"/>
