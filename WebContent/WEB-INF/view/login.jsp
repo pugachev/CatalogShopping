@@ -4,7 +4,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
 <logic:present name="login">
-    <bean:write name="login" property="name" />さん、ようこそ。買い物を楽しんでください
+    <bean:write name="login" property="name" />さん、ようこそ。買い物を楽しんでください <div id="totalfee"></div>
 </logic:present>
 
 <logic:notPresent name="login">

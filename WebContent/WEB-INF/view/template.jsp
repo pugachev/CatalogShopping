@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 	</head>
   <BODY>
-  	<tiles:insert attribute="preprocess"/>
+	<tiles:insert attribute="preprocess"/>
     <TABLE width="800" border="0">
       <TR>
         <TD width="800" align="center">

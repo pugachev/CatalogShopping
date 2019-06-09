@@ -1,11 +1,12 @@
 package action.auth;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.SQLException;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
+
+import dao.ShoppingDAO;
 
 public class MySimpleTag extends TagSupport {
   private String name;
@@ -13,15 +14,24 @@ public class MySimpleTag extends TagSupport {
   	@Override
 	public int doEndTag() throws JspException {
 
-		    try {
-		        // 出力
-		        pageContext.getOut().print("あなたが入力した名前は「" + name + "」です。");
-		        Logger.getLogger(MySimpleTag.class.getName()).log(Level.SEVERE, null, name);
-		    } catch (IOException ex) {
-		        Logger.getLogger(MySimpleTag.class.getName()).log(Level.SEVERE, null, ex);
-		    }
+  	 	ShoppingDAO dao = new ShoppingDAO();
+  		int rcvTotalfee = 0;
+		try
+		{
+			rcvTotalfee = dao.searchTotalFee(name);
+			pageContext.getOut().print(rcvTotalfee);
+			System.out.println(">>> rcvTotalfee=" + rcvTotalfee);
+		}
+		catch (SQLException e)
+		{
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 
-		    return 0;
+		return rcvTotalfee;
 	}
 
 // name属性をセットするためのセッタ

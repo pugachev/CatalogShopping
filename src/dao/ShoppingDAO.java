@@ -1,11 +1,12 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.List;
-import java.sql.Date;
 
 import javax.sql.DataSource;
 
@@ -18,9 +19,13 @@ public class ShoppingDAO {
     private static final String INSERTSHOPPING = "insert into shopping values(?,?,?)";
 
     //購入詳細テーブルに挿入するSQL
-    private static final String INSERTSHOPPINGDETAIL = "insert into shoppingdetail values(?,?,?,?)";
+    private static final String INSERTSHOPPINGDETAIL = "insert into shoppingdetail values(?,?,?,?,?)";
+
+    //購入金額の合計を取得する
+    private static final String SEARCHTOALFEE = "select userid,sum(shoppingdetail.totalfee) as totalfee from shopping left join shoppingdetail on shopping.id = shoppingdetail.shoppingid where userid= ? and shoppingdate= ? group by userid;";
 
     private DataSource ds;
+    private int        totalfee;
 
     public ShoppingDAO() {
         ds =  DaoUtil.getSource();;
@@ -59,9 +64,11 @@ public class ShoppingDAO {
                 p2.setInt(2, i);
                 p2.setInt(3, item.getProduct().getId());
                 p2.setInt(4, item.getCount());
+                totalfee=0;
+                totalfee = item.getProduct().getPrice()*item.getCount();
+                p2.setInt(5,totalfee);
                 p2.executeUpdate();
             }
-
             con.commit();
         } catch (SQLException ex) {
             throw ex;
@@ -70,6 +77,44 @@ public class ShoppingDAO {
             p1.close();
             con.close();
         }
+    }
+
+    public int searchTotalFee(String uid) throws SQLException {
+        PreparedStatement pStmt = null;
+        ResultSet rs = null;
+        int       rcvTotalfee = 0;
+
+        //1)購入日の日付を取得
+        Date now = nowDate();
+
+        Connection con = ds.getConnection();
+
+        try {
+
+            pStmt = con.prepareStatement(SEARCHTOALFEE);
+
+
+            pStmt.setString(1,uid);
+            pStmt.setDate(2,now);
+
+            rs = pStmt.executeQuery();
+
+            while (rs.next())
+            {
+                rcvTotalfee = rs.getInt("totalfee");
+            }
+
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if(rs != null){
+                rs.close();
+            }
+            pStmt.close();
+            con.close();
+        }
+
+        return rcvTotalfee;
     }
 
     private Date nowDate() {
