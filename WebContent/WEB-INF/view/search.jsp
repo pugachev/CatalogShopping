@@ -2,8 +2,8 @@
 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
-<TABLE width="250" bgColor="0x7f55f1" >
- <TR valign="top" width="250">
+<TABLE width="250" bgColor="0x7f55f1" border="0">
+ <TR valign="top">
   <TH>
    品物の検索はこちらからどうぞ
    <html:form action="/KeywordSearch" >

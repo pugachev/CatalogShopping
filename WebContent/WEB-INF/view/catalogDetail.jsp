@@ -14,6 +14,7 @@
 				});
 			});
 		</script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
   <TABLE border="0" width="400" height="200" >
      <TR width="400" bgColor=#bb5a5a valigh="top">
       <TH height="20"><FONT color=#ffffff>番号</FONT></TH>
