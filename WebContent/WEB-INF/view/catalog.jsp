@@ -58,7 +58,7 @@
 
    <TABLE class="tbl-r03" width="100%">
    	<thead>
-     <TR class="thead" bgColor=#bb5a5a>
+     <TR class="thead" >
       <th></th>
       <TH><FONT color=#ffffff>番号</FONT></TH>
       <TH><FONT color=#ffffff>商品名</FONT></TH>
