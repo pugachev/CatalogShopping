@@ -13,8 +13,7 @@ module1トップ画面
 </p>
 
 
-<html:form action="/Module1Sample">
-	<html:hidden property="val" value="nyannnyann"/>
+<html:form action="/Catalog">
 	<html:submit value="送信!"/>
 </html:form>
 

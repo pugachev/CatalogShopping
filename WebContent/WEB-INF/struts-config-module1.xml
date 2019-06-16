@@ -3,6 +3,10 @@
 <struts-config>
 
     <form-beans>
+        <!-- 1)商品一覧画面を表示するためのForm -->
+        <form-bean name="CatalogForm" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="offset" type="java.lang.Integer" />
+        </form-bean>
 		<form-bean
     		name="Default"
     		type="org.apache.struts.action.DynaActionForm"/>
@@ -12,12 +16,16 @@
     </form-beans>
 
     <action-mappings>
+      <action name="CatalogForm" path="/Catalog" type="action.catalog.CatalogShowAction">
+          <forward name="show" path="catalog" />
+       </action>
+
     	<action
     		path="/Module1Sample"
     		type="module1.InputAction"
     		name="Input"
     		scope="request">
-    		<forward name="success" path="/result2.jsp"/>
+    		<forward name="success" path="/module1/index.jsp"/>
     	</action>
 
     	<action
@@ -27,17 +35,17 @@
     		scope="request">
     		<forward
     			name="success"
-    			path="/index.jsp"/>
+    			path="/module1/result2.jsp"/>
     	</action>
 
     	<action
     		path="/MoveTopPage"
     		type="org.apache.struts.actions.ForwardAction"
     		name="Default"
-    		parameter="/module1/index.jsp">
+    		parameter="/module1/result2.jsp">
     		<forward
     			name="success"
-    			path="/index.jsp"/>
+    			path="/module1/index.jsp"/>
 		</action>
     </action-mappings>
 

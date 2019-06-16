@@ -96,7 +96,7 @@
 
        <!-- 22)  カートの内容をデータベースに格納するアクション -->
        <action name="CommitCartForm" path="/members/CommitCart" type="action.cart.CommitCartAction">
-          <forward name="success" module="/sub" path="/helloworld" />
+          <forward name="success" path="commit" />
           <forward name="twice" path="twice" />
        </action>
 
@@ -154,7 +154,7 @@
     		<forward
     			name="success"
     			contextRelative="true"
-    			path="/module1/MoveTopPage">
+    			path="/module1/index.jsp">
     			</forward>
     	</action>
     </action-mappings>
