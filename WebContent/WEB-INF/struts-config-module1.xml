@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+
+    <form-beans>
+		<form-bean
+    		name="Default"
+    		type="org.apache.struts.action.DynaActionForm"/>
+       <form-bean name="Input" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="Input" type="java.lang.String" />
+       </form-bean>
+    </form-beans>
+
+    <action-mappings>
+    	<action
+    		path="/Module1Sample"
+    		type="module1.InputAction"
+    		name="Input"
+    		scope="request">
+    		<forward name="success" path="/result2.jsp"/>
+    	</action>
+
+    	<action
+    		path="/Module1MoveTop"
+    		type="module1.InputAction"
+    		name="Default"
+    		scope="request">
+    		<forward
+    			name="success"
+    			path="/index.jsp"/>
+    	</action>
+
+    	<action
+    		path="/MoveTopPage"
+    		type="org.apache.struts.actions.ForwardAction"
+    		name="Default"
+    		parameter="/module1/index.jsp">
+    		<forward
+    			name="success"
+    			path="/index.jsp"/>
+		</action>
+    </action-mappings>
+
+</struts-config>
+

@@ -11,13 +11,10 @@
             <param-name>config</param-name>
             <param-value>/WEB-INF/struts-config.xml</param-value>
         </init-param>
-
-        <!--Tilesを利用するための設定 -->
-        <init-param>
-            <param-name>chainConfig</param-name>
-            <param-value>org/apache/struts/tiles/chain-config.xml</param-value>
-        </init-param>
-
+	    <init-param>
+	      <param-name>config/module1</param-name>
+	      <param-value>/WEB-INF/struts-config-module1.xml</param-value>
+	    </init-param>
         <init-param>
             <param-name>debug</param-name>
             <param-value>3</param-value>
@@ -32,6 +29,11 @@
 			        org/apache/struts/tiles/chain-config.xml
 			</param-value>
 		</init-param>
+		<!--Tilesを利用するための設定 -->
+        <init-param>
+            <param-name>chainConfig</param-name>
+            <param-value>org/apache/struts/tiles/chain-config.xml</param-value>
+        </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>

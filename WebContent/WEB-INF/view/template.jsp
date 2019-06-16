@@ -61,6 +61,7 @@
 	</head>
   <BODY>
 <header class="header">
+	 <tiles:insert attribute="preprocess"/>
      <tiles:insert attribute="header"/>
 </header><!-- header class="header" -->
 
@@ -87,8 +88,10 @@
 </div><!-- div class="r_sidebar" -->
 
 
-<footer class="footer">
-     <center><p>フッター</p></center>
+<footer class="footer" style="background-color:0x7f55f1;">
+	<div id="footer2">
+	 <center><p class="right">present by Layout Gallery. Copyright © Your Site Name. All rights reserved.</p></center>
+	</div>
 </footer><!-- footer class="footer" -->
 	</body>
 </html>
