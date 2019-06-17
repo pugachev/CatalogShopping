@@ -6,7 +6,7 @@
 <TABLE id="searchtable" bgColor="0x7f55f1" border="0" width="250" >
   <TBODY>
           <TR>
-            <TD ><html:link action="/Catalog" >カタログ</html:link></TD>
+            <TD ><html:link action="/Catalog2" >カタログ</html:link></TD>
           </TR>
 			<logic:notPresent name="admin">
 			    <TR>
