@@ -151,6 +151,14 @@
        </action>
 
     	<action
+    		path="/SearchProductModule1Action"
+    		type="module1.SearchProductModule1Action"
+    		name="KeyWordForm"
+    		scope="request">
+    		<forward name="success" path="catalog2"/>
+    	</action>
+
+    	<action
     		path="/MoveModule1"
     		type="module1.InputAction"
     		name="Input"

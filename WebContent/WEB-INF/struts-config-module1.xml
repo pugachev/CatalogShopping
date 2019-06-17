@@ -13,6 +13,10 @@
        <form-bean name="Input" type="org.apache.struts.action.DynaActionForm" >
          <form-property name="Input" type="java.lang.String" />
        </form-bean>
+
+       <form-bean name="KeyWordForm" type="org.apache.struts.action.DynaActionForm" >
+         <form-property name="keyword" type="java.lang.String" />
+       </form-bean>
     </form-beans>
 
     <action-mappings>
@@ -27,7 +31,13 @@
     		scope="request">
     		<forward name="success" path="catalog2"/>
     	</action>
-
+    	<action
+    		path="/SearchProductModule1Action"
+    		type="module1.SearchProductModule1Action"
+    		name="KeyWordForm"
+    		scope="request">
+    		<forward name="success" path="catalog2"/>
+    	</action>
     	<action
     		path="/Module1MoveTop"
     		type="module1.InputAction"

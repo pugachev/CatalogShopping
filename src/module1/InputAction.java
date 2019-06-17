@@ -14,8 +14,7 @@ public class InputAction extends Action {
 
 	private String val;
 
-	public ActionForward execute(ActionMapping map, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ActionForward execute(ActionMapping map, ActionForm form,HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println(" >>> InputAction 通過 <<< ");
 		return map.findForward("success");
 	}
