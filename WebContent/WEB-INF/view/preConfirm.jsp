@@ -15,7 +15,7 @@
 	{
 		rcvTotalfee = dao.searchTotalFee(mem.getMail());
 	}
-	String imgsrc="";
+	String imgsrc="'"+"none"+"'";
 	if(rcvTotalfee>30000)
 	{
 		imgsrc="'"+"/CatalogShopping/img/gold.png"+"'";
@@ -33,10 +33,11 @@
 <script>
 $(function() {
 	var tmpfee = <%= rcvTotalfee %>;
-	var imgsrc = <%= imgsrc %>;
-	if(tmpfee!=null && tmpfee>0)
+
+	if(tmpfee>0)
 	{
 		$('#totalfee').text("本日のお買い物 合計金額は "+ Number(tmpfee).toLocaleString() + "円です");
+		var imgsrc = <%= imgsrc %>;
 		$('#rankimg').attr('src',imgsrc);
 	}
 	else

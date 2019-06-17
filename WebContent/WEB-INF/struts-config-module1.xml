@@ -16,7 +16,7 @@
     </form-beans>
 
     <action-mappings>
-      <action name="CatalogForm" path="/Catalog" type="action.catalog.CatalogShowAction">
+       <action name="CatalogForm" path="/Catalog" type="action.catalog.CatalogShowAction">
           <forward name="show" path="catalog" />
        </action>
 
@@ -25,7 +25,7 @@
     		type="module1.InputAction"
     		name="Input"
     		scope="request">
-    		<forward name="success" path="/module1/index.jsp"/>
+    		<forward name="success" path="catalog2"/>
     	</action>
 
     	<action
@@ -35,7 +35,7 @@
     		scope="request">
     		<forward
     			name="success"
-    			path="/module1/result2.jsp"/>
+    			path="/module1/index.jsp"/>
     	</action>
 
     	<action
@@ -48,6 +48,8 @@
     			path="/module1/index.jsp"/>
 		</action>
     </action-mappings>
-
+    <plug-in className="org.apache.struts.tiles.TilesPlugin">
+     <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+    </plug-in>
 </struts-config>
 

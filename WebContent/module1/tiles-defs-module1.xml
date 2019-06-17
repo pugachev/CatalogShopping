@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN" "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+   <!-- 商品一覧画面 -->
+   <definition name="catalog2" path="/module1/template-module1.jsp">
+       <put name="searchadd" value="/module1/searchadd.jsp"/>
+   </definition>
+
+</tiles-definitions>

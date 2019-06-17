@@ -87,7 +87,7 @@
 </div><!-- div class="wrapper" -->
 
 <div class="r_sidebar">
-	<tiles:insert attribute="search"/>
+	<tiles:insert attribute="searchadd"/>
 </div><!-- div class="r_sidebar" -->
 
 

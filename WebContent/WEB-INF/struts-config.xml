@@ -71,6 +71,10 @@
           <forward name="show" path="catalog" />
        </action>
 
+       <action name="CatalogForm" path="/Catalog2" type="action.catalog.CatalogShowAction">
+          <forward name="show" path="catalog2" />
+       </action>
+
        <!-- 17) 商品一覧画面をスクロールするアクション -->
        <action name="CatalogForm" path="/CatalogPage" type="action.catalog.CatalogPageAction" parameter="action">
           <forward name="show" path="catalog" />
@@ -155,7 +159,7 @@
     			name="success"
     			contextRelative="true"
     			path="/module1/index.jsp">
-    			</forward>
+    		</forward>
     	</action>
     </action-mappings>
 

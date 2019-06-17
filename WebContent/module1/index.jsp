@@ -18,7 +18,7 @@ module1結果画面
 <p>
 	■自分で定義したActionクラスを介しページ遷移を行う場合
 </p>
-<html:form action="/Module1MoveTop">
+<html:form action="/Module1Sample">
 	<html:submit value="module1へ"/>
 </html:form>
 

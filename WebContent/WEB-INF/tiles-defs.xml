@@ -3,17 +3,27 @@
 
 <tiles-definitions>
    <!-- 商品一覧画面 -->
-   <definition name="catalog" path="/WEB-INF/view/template.jsp">
-   <put name="preprocess" value="/WEB-INF/view/preCatalog.jsp"/>
+   <definition name="catalog" path="/WEB-INF/view/template.jsp" controllerClass="util.DynaMenuController">
+       <put name="preprocess" value="/WEB-INF/view/preCatalog.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
        <put name="menu" value="/WEB-INF/view/menu.jsp"/>
        <put name="main" value="/WEB-INF/view/catalog.jsp"/>
        <put name="search" value="/WEB-INF/view/search.jsp"/>
+       <putList name="menuList">
+            <item value="追加検索" link="#" classtype="org.apache.struts.tiles.beans.SimpleMenuItem" />
+       </putList>
    </definition>
-
+   <definition name="catalog2" path="/module1/template-module1.jsp">
+       <put name="preprocess" value="/module1/preCatalog.jsp"/>
+       <put name="header" value="/module1/header.jsp"/>
+       <put name="login" value="/module1/login.jsp"/>
+       <put name="menu" value="/module1/menu.jsp"/>
+       <put name="main" value="/module1/catalog.jsp"/>
+       <put name="searchadd" value="/module1/searchadd.jsp"/>
+   </definition>
    <!-- 商品詳細画面 -->
-   <definition name="product" path="/WEB-INF/view/template.jsp">
+   <definition name="product" path="/WEB-INF/view/template.jsp" controllerClass="util.DynaMenuController">
    	   <put name="preprocess" value="/WEB-INF/view/preDetail.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
@@ -23,7 +33,7 @@
     </definition>
 
     <!-- カート一覧画面　-->
-    <definition name="cart" path="/WEB-INF/view/no_search_template.jsp">
+    <definition name="cart" path="/WEB-INF/view/no_search_template.jsp" controllerClass="util.DynaMenuController">
        <put name="preprocess" value="/WEB-INF/view/preCart.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
@@ -32,7 +42,7 @@
     </definition>
 
     <!-- 購入確認画面 -->
-    <definition name="confirm" path="/WEB-INF/view/no_search_template.jsp">
+    <definition name="confirm" path="/WEB-INF/view/no_search_template.jsp" controllerClass="util.DynaMenuController">
        <put name="preprocess" value="/WEB-INF/view/preConfirm.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
@@ -41,7 +51,7 @@
     </definition>
 
     <!-- 購入終了画面 -->
-    <definition name="commit" path="/WEB-INF/view/no_search_template.jsp">
+    <definition name="commit" path="/WEB-INF/view/no_search_template.jsp" controllerClass="util.DynaMenuController">
        <put name="preprocess" value="/WEB-INF/view/preComplete.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
@@ -50,7 +60,7 @@
     </definition>
 
     <!-- 複数回購入エラー画面  -->
-    <definition name="twice" path="/WEB-INF/view/no_search_template.jsp">
+    <definition name="twice" path="/WEB-INF/view/no_search_template.jsp" controllerClass="util.DynaMenuController">
        <put name="preprocess" value="/WEB-INF/view/preError.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
@@ -59,7 +69,7 @@
     </definition>
 
     <!-- 会員登録画面  -->
-    <definition name="member" path="/WEB-INF/view/template.jsp">
+    <definition name="member" path="/WEB-INF/view/template.jsp" controllerClass="util.DynaMenuController">
        <put name="preprocess" value="/WEB-INF/view/preRegist.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>
@@ -69,7 +79,7 @@
     </definition>
 
     <!-- 会員登録終了画面  -->
-    <definition name="membercomplete" path="/WEB-INF/view/template.jsp">
+    <definition name="membercomplete" path="/WEB-INF/view/template.jsp" controllerClass="util.DynaMenuController">
        <put name="preprocess" value="/WEB-INF/view/preRegistComplete.jsp"/>
        <put name="header" value="/WEB-INF/view/header.jsp"/>
        <put name="login" value="/WEB-INF/view/login.jsp"/>

@@ -64,22 +64,22 @@
 	</head>
   <BODY>
 <header class="header">
-	 <tiles:insert attribute="preprocess"/>
-     <tiles:insert attribute="header"/>
+<%-- 	 <tiles:insert attribute="preprocess"/>
+     <tiles:insert attribute="header"/> --%>
 </header><!-- header class="header" -->
 
 <div class="wrapper">
 <div class="content">
 
 <div class="l_sidebar">
-	<tiles:insert attribute="menu"/>
+	<%-- <tiles:insert attribute="menu"/> --%>
 	<%-- <tiles:insert attribute="search"/> --%>
 	<!-- <p>ここはメニューです</p> -->
 </div><!-- div class="l_sidebar" -->
 
 <div class="content_main">
-	<tiles:insert attribute="login"/>
-	<tiles:insert attribute="main"/>
+<%-- 	<tiles:insert attribute="login"/>
+	<tiles:insert attribute="main"/> --%>
 </div><!-- div class="content_main" -->
 
 </div><!-- div class="content" -->
@@ -88,13 +88,18 @@
 
 <div class="r_sidebar">
 	<tiles:insert attribute="search"/>
+<%-- 	<tiles:importAttribute name="menuList" />
+	  <logic:iterate id="menu" name="menuList" type="org.apache.struts.tiles.beans.SimpleMenuItem">
+	    <bean:define id="link" name="menu" property="link" type="java.lang.String" />
+	    <html:link page="<%=link %>"><bean:write name="menu" property="value" /></html:link>
+	 </logic:iterate> --%>
 </div><!-- div class="r_sidebar" -->
 
 
 <footer class="footer" style="background-color:0x7f55f1;">
-	<div id="footer2">
+<!-- 	<div id="footer2">
 	 <center><p class="right">present by Layout Gallery. Copyright © Your Site Name. All rights reserved.</p></center>
-	</div>
+	</div> -->
 </footer><!-- footer class="footer" -->
 	</body>
 </html>
