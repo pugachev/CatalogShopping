@@ -95,6 +95,6 @@
    </TD>
    </TR>
    </TABLE>
-<html:form action="/MoveModule1">
+<%-- <html:form action="/MoveModule1">
 	<html:submit value="module1へ"/>
-</html:form>
+</html:form> --%>

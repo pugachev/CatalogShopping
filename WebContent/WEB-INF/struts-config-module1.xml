@@ -24,13 +24,13 @@
           <forward name="show" path="catalog" />
        </action>
 
-    	<action
+<!--     	<action
     		path="/Module1Sample"
     		type="module1.InputAction"
     		name="Input"
     		scope="request">
     		<forward name="success" path="catalog2"/>
-    	</action>
+    	</action> -->
     	<action
     		path="/SearchProductModule1Action"
     		type="module1.SearchProductModule1Action"
@@ -38,7 +38,7 @@
     		scope="request">
     		<forward name="success" path="catalog2"/>
     	</action>
-    	<action
+<!--     	<action
     		path="/Module1MoveTop"
     		type="module1.InputAction"
     		name="Default"
@@ -56,7 +56,7 @@
     		<forward
     			name="success"
     			path="/module1/index.jsp"/>
-		</action>
+		</action> -->
     </action-mappings>
     <plug-in className="org.apache.struts.tiles.TilesPlugin">
      <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />

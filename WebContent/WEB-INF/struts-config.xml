@@ -150,15 +150,15 @@
             <forward name="list" path="catalog" />
        </action>
 
-    	<action
+<!--     	<action
     		path="/SearchProductModule1Action"
     		type="module1.SearchProductModule1Action"
     		name="KeyWordForm"
     		scope="request">
     		<forward name="success" path="catalog2"/>
-    	</action>
+    	</action> -->
 
-    	<action
+<!--     	<action
     		path="/MoveModule1"
     		type="module1.InputAction"
     		name="Input"
@@ -168,7 +168,7 @@
     			contextRelative="true"
     			path="/module1/index.jsp">
     		</forward>
-    	</action>
+    	</action> -->
     </action-mappings>
 
     <message-resources parameter="ApplicationResources" />
