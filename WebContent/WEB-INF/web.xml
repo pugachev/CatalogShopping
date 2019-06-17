@@ -15,6 +15,7 @@
             <param-name>debug</param-name>
             <param-value>3</param-value>
         </init-param>
+
         <init-param>
             <param-name>detail</param-name>
             <param-value>3</param-value>
