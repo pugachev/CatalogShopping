@@ -4,11 +4,17 @@
 <%@page import="java.sql.*" %>
 <%@page import="java.util.Date" %>
 <%@page import="model.Member" %>
+<%@ page import="org.apache.log4j.Level" %>
+<%@ page import="org.apache.log4j.LogManager" %>
+<%@ page import="org.apache.log4j.Logger" %>
+<%@ page import="java.util.Enumeration" %>
+
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="my" uri="/WEB-INF/mytag.tld" %>
 <%! int rcvTotalfee=0; %>
 <%
+
  	ShoppingDAO dao = new ShoppingDAO();
 	Member mem = (Member)request.getSession().getAttribute("login");
 	if(mem!=null)

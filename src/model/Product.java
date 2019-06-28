@@ -5,7 +5,28 @@ public class Product {
     private String name;
     private int price;
     private String detail;
-    private String pictureUrl;
+    private int daihyou;
+    private String dispgroup;
+
+
+
+    public int getDaihyou() {
+		return daihyou;
+	}
+
+	public void setDaihyou(int daihyou) {
+		this.daihyou = daihyou;
+	}
+
+	public String getDispgroup() {
+		return dispgroup;
+	}
+
+	public void setDispgroup(String dispgroup) {
+		this.dispgroup = dispgroup;
+	}
+
+	private String pictureUrl;
 
 	public String getDetail() {
 		return detail;
@@ -30,7 +51,7 @@ public class Product {
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
-    
+
 	public void setId(int id) {
 		this.id = id;
 	}
