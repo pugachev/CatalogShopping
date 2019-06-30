@@ -154,7 +154,8 @@ YAHOO.util.Event.addListener(window, "load", function(){
 
 <form method="post" action="http://localhost:8080/CatalogShopping/Catalog.do">
 	<input type="hidden" id="parameter1" name="parameter1" value="">
-	<input type="submit" id="senddata" name="senddata" value="送信" >
+	<!-- <input type="submit" id="senddata" name="senddata" value="送信" style="visibility:hidden;"> -->
+	<input type="submit" id="senddata" name="senddata" value="送信" style="display:none;">
 </form>
 <div id="treeDiv1">
 </div>
