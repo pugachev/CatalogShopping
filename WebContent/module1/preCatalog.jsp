@@ -3,7 +3,9 @@
 <%@page import="dao.ShoppingDAO" %>
 <%@page import="java.sql.*" %>
 <%@page import="java.util.Date" %>
+<%@page import="java.util.List" %>
 <%@page import="model.Member" %>
+<%@page import="model.Product" %>
 <%@ page import="org.apache.log4j.Level" %>
 <%@ page import="org.apache.log4j.LogManager" %>
 <%@ page import="org.apache.log4j.Logger" %>
@@ -35,6 +37,10 @@
 		imgsrc="'"+"/CatalogShopping/img/copper.png"+"'";
 	}
 	System.out.println("rcvTotalfee=" + rcvTotalfee);
+
+	List<Product> mProduct = (java.util.List)request.getSession().getAttribute("products2");
+	System.out.println("module1 preCatalog.jsp "+mProduct.get(0).getName());
+
 %>
 <script>
 $(function() {
@@ -52,7 +58,6 @@ $(function() {
 	}
 });
 </script>
-
 
 <%-- <h2>これはTaglibのテストです</h2>
 <h3>※本日の日付は、<my:MyTag name="Foo"/>です。</h3> --%>

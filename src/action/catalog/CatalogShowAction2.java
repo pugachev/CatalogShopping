@@ -19,23 +19,41 @@ public class CatalogShowAction2 extends Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+
+    	System.out.println("CatalogShowAction2 " + request.getParameter("parameter1"));
+
+    	String selectChoice = request.getParameter("parameter1");
         //struts-config.xmlに設定したデータソースの取得
         CatalogDAO dao = new CatalogDAO();
 
-        try {
+        if(selectChoice!=null && !selectChoice.contentEquals(""))
+        {
             //1) データベースの検索をDAOに委譲している
-            List<Product> list = dao.getProductList();
+            List<Product> list = dao.getProductListByName(selectChoice);
 
             //2) セッションにProductオブジェクトのリストを格納している
-            request.getSession().setAttribute("products", list);
+            request.getSession().setAttribute("products2", list);
 
             //3)表示領域の設定
             request.setAttribute("offset","0");
+        }
+        else
+        {
+            try {
+                //1) データベースの検索をDAOに委譲している
+                List<Product> list = dao.getProductList();
 
-            //4)例外処理の仕方
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
+                //2) セッションにProductオブジェクトのリストを格納している
+                request.getSession().setAttribute("products2", list);
+
+                //3)表示領域の設定
+                request.setAttribute("offset","0");
+
+                //4)例外処理の仕方
+            } catch (SQLException e) {
+                e.printStackTrace();
+                throw e;
+            }
         }
 
         return mapping.findForward("show2");

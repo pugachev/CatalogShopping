@@ -54,7 +54,7 @@
 	}
 
 </style>
-   詳細を見たい商品の商品番号をクリックしてください。
+   詳細を見たい商品の商品番号をクリックしてください。aaaaaaaa
 
    <TABLE class="tbl-r03" width="100%">
    	<thead>
@@ -65,14 +65,17 @@
       <TH><FONT color=#ffffff>価格</FONT></TH>
      </TR>
     </thead>
-     <logic:iterate id="product" name="products" type="model.Product" offset="<%=(String)request.getAttribute(\"offset\") %>" length="10" indexId="count" >
+     <logic:iterate id="product" name="products2" type="model.Product" offset="<%=(String)request.getAttribute(\"offset\") %>" length="10" indexId="count" >
      <tbody>
       <!-- カタログらしく、色を変える -->
       <TR >
        <td></td>
        <TD data-label="番号" ><html:link action="/CatalogDetail" paramId="id" paramName="product" paramProperty="id" ><bean:write name="product" property="id" /></html:link></TD>
+       <%  System.out.println("番号= " +product.getId()); %>
        <TD data-label="商品名"><bean:write name="product" property="name" /></TD>
+       <%  System.out.println("商品名= " +product.getName()); %>
        <TD data-label="価格"><bean:write name="product" property="price" />円</TD>
+       <%  System.out.println("価格= " +product.getPrice()); %>
       </TR>
     </tbody>
      </logic:iterate>
@@ -85,7 +88,7 @@
        <bean:message key="back" />
       </html:submit>
      </logic:greaterThan>
-     <logic:lessThan name="offset" value="<%=Integer.toString(((java.util.List)session.getAttribute(\"products\")).size() -10) %>" >
+     <logic:lessThan name="offset" value="<%=Integer.toString(((java.util.List)session.getAttribute(\"products2\")).size() -10) %>" >
      <html:submit property="action" >
       <bean:message key="next" />
      </html:submit>

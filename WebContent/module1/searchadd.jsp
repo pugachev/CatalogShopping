@@ -95,6 +95,24 @@ YAHOO.EGP.BasicTree = function() {
 	    //treeのインスタンス化
 	    tree = new YAHOO.widget.TreeView("treeDiv1",treeNodes);
 	    tree.subscribe("expand", function(node) {alert("[index: "+node.index + ", label: " + node.label + "] was expanded");
+	    tree.subscribe("labelClick", function(node) {
+	        console.log(node.label);
+	        var hostUrl= 'http://localhost:8080/CatalogShopping/Catalog2.do';
+	        var param1 = node.label;
+	        $.ajax({
+	            url: hostUrl,
+	            type:'POST',
+	            dataType: 'text',
+	            data : {parameter1 : param1},
+	            timeout:3000,
+	        }).done(function(data) {
+	                          alert("ok");
+	        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+	                         alert("error");
+	        })
+
+
+	    });
     });
 
 	//treeの描画
@@ -119,6 +137,10 @@ YAHOO.util.Event.onDOMReady(
 	//ハンドラは、上記のオブジェクトのスコープをもつ。
 	true
 );
+
+YAHOO.util.Event.addListener(window, "load", function(){
+
+	});
 </script>
 </head>
 <body >

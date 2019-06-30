@@ -14,6 +14,16 @@
             <item value="追加検索" link="#" classtype="org.apache.struts.tiles.beans.SimpleMenuItem" />
        </putList>
    </definition>
+
+   <definition name="catalog2" path="/module1/template-module1.jsp">
+       <put name="preprocess" value="/module1/preCatalog.jsp"/>
+       <put name="header" value="/module1/header.jsp"/>
+       <put name="login" value="/module1/login.jsp"/>
+       <put name="menu" value="/module1/menu.jsp"/>
+       <put name="main" value="/module1/catalog.jsp"/>
+       <put name="searchadd" value="/module1/searchadd.jsp"/>
+   </definition>
+
 <!--    <definition name="catalog2" path="/module1/template-module1.jsp">
        <put name="preprocess" value="/module1/preCatalog.jsp"/>
        <put name="header" value="/module1/header.jsp"/>

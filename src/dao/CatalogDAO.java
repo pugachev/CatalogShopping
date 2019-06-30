@@ -19,6 +19,9 @@ public class CatalogDAO {
     //キーワード検索するSQL
     private static final String SELECTKEY = "select * from catalog where detail like ? or name like ?";
 
+    //商品名検索するSQL
+    private static final String SELECTKEYBYNAME = "select * from catalog where name like ";
+
 	 //IDで商品を検索するSQL
 	 private static final String SELECTDETAIL = "select * from catalog where id=?";
 
@@ -258,6 +261,46 @@ public class CatalogDAO {
         }
 
         return list;
+    }
+
+    public List<Product> getProductListByName(String keyword) throws SQLException {
+        List<Product> list = new ArrayList<Product>();
+        Connection con = null;
+        PreparedStatement pStmt = null;
+        ResultSet rs = null;
+
+        try {
+
+            con = source.getConnection();
+
+            String tmp = "select * from catalog where name like '%" + keyword +"%'";
+            System.out.println("getProductListByName sql " + tmp);
+            pStmt = con.prepareStatement(tmp);
+
+//            String kw = "%"+keyword+"%";
+//
+//            pStmt.setString(1,kw);
+
+
+
+            rs = pStmt.executeQuery();
+
+            while (rs.next()) {
+                list.add(getProduct(rs));
+            }
+
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if(rs != null){
+                rs.close();
+            }
+            pStmt.close();
+            con.close();
+        }
+
+        return list;
+
     }
 
     public List<Product> getProductList(String keyword) throws SQLException {
