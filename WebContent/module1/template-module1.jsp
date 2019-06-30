@@ -91,11 +91,11 @@
 </div><!-- div class="r_sidebar" -->
 
 
-<footer class="footer" style="background-color:0x7f55f1;">
+<!-- <footer class="footer" style="background-color:0x7f55f1;">
 	<div id="footer2">
 	 <center><p class="right">present by Layout Gallery. Copyright © Your Site Name. All rights reserved.</p></center>
 	</div>
-</footer><!-- footer class="footer" -->
+</footer> -->
 	</body>
 </html>
 

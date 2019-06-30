@@ -24,6 +24,11 @@ public class CatalogShowAction extends Action {
         //struts-config.xmlに設定したデータソースの取得
         CatalogDAO dao = new CatalogDAO();
 
+        if(request.getSession().getAttribute("products")!=null)
+        {
+        	request.getSession().removeAttribute("products");
+        }
+
         if(selectChoice!=null && !selectChoice.contentEquals(""))
         {
             //1) データベースの検索をDAOに委譲している
@@ -34,6 +39,10 @@ public class CatalogShowAction extends Action {
 
             //3)表示領域の設定
             request.setAttribute("offset","0");
+
+            System.out.println("show2にいきます");
+
+//            return mapping.findForward("show2");
         }
         else
         {

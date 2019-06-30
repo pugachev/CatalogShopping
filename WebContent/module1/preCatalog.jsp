@@ -43,6 +43,8 @@
 
 %>
 <script>
+
+
 $(function() {
 	var tmpfee = <%= rcvTotalfee %>;
 	var imgsrc = <%= imgsrc %>;

@@ -15,13 +15,16 @@
        </putList>
    </definition>
 
-   <definition name="catalog2" path="/module1/template-module1.jsp">
-       <put name="preprocess" value="/module1/preCatalog.jsp"/>
-       <put name="header" value="/module1/header.jsp"/>
-       <put name="login" value="/module1/login.jsp"/>
-       <put name="menu" value="/module1/menu.jsp"/>
-       <put name="main" value="/module1/catalog.jsp"/>
-       <put name="searchadd" value="/module1/searchadd.jsp"/>
+   <definition name="catalog2" path="/WEB-INF/view/template.jsp" controllerClass="util.DynaMenuController">
+       <put name="preprocess" value="/WEB-INF/view/preCatalog.jsp"/>
+       <put name="header" value="/WEB-INF/view/header.jsp"/>
+       <put name="login" value="/WEB-INF/view/login.jsp"/>
+       <put name="menu" value="/WEB-INF/view/menu.jsp"/>
+       <put name="main" value="/WEB-INF/view/resultcatalog.jsp"/>
+       <put name="search" value="/WEB-INF/view/search.jsp"/>
+       <putList name="menuList">
+            <item value="追加検索" link="#" classtype="org.apache.struts.tiles.beans.SimpleMenuItem" />
+       </putList>
    </definition>
 
 <!--    <definition name="catalog2" path="/module1/template-module1.jsp">

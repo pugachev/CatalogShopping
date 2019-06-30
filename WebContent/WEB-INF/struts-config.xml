@@ -69,11 +69,12 @@
        <!-- 16) 商品一覧画面を表示するアクション -->
        <action name="CatalogForm" path="/Catalog" type="action.catalog.CatalogShowAction">
           <forward name="show" path="catalog" />
+          <forward name="show2" path="product" />
        </action>
 
-       <action name="CatalogForm" path="/Catalog2" type="action.catalog.CatalogShowAction2">
+<!--        <action name="CatalogForm" path="/Catalog2" type="action.catalog.CatalogShowAction2">
           <forward name="show2" path="catalog2" />
-       </action>
+       </action> -->
 
        <!-- 17) 商品一覧画面をスクロールするアクション -->
        <action name="CatalogForm" path="/CatalogPage" type="action.catalog.CatalogPageAction" parameter="action">

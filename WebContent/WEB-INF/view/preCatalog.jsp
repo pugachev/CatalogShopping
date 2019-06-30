@@ -31,6 +31,12 @@
 	System.out.println("rcvTotalfee=" + rcvTotalfee);
 %>
 <script>
+
+function getData() {
+	location.reload(true);
+	console.log('preCatalog getData() 来ましたー');
+}
+
 $(function() {
 	var tmpfee = <%= rcvTotalfee %>;
 	var imgsrc = <%= imgsrc %>;
