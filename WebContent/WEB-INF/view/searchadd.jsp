@@ -97,7 +97,7 @@ YAHOO.EGP.BasicTree = function() {
 	    tree.subscribe("expand", function(node) {alert("[index: "+node.index + ", label: " + node.label + "] was expanded");
 	    tree.subscribe("labelClick", function(node) {
 	        console.log(node.label);
-	        var hostUrl= 'http://localhost:8080/CatalogShopping/Catalog2.do';
+	        var hostUrl= 'http://localhost:8080/CatalogShopping/Catalog.do';
 	        var param1 = node.label;
 	        document.getElementById('parameter1').value=param1;
 	        document.getElementById('senddata').click();
@@ -152,7 +152,7 @@ YAHOO.util.Event.addListener(window, "load", function(){
 階層化されたオブジェクト定義から生成されるTreeです。
 </p>
 
-<form method="post" action="http://localhost:8080/CatalogShopping/Catalog2.do">
+<form method="post" action="http://localhost:8080/CatalogShopping/Catalog.do">
 	<input type="hidden" id="parameter1" name="parameter1" value="">
 	<!-- <input type="submit" id="senddata" name="senddata" value="送信" style="visibility:hidden;"> -->
 	<input type="submit" id="senddata" name="senddata" value="送信" style="display:none;">
