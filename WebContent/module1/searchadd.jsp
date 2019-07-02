@@ -14,8 +14,11 @@
 <%@page import="com.fasterxml.jackson.databind.ObjectMapper" %>
 <%@page import="util.IniFileParser" %>
 <%@page import="java.io.InputStream" %>
+<%@page import="util.CookieTest" %>
 
 <%
+
+
 	InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("sample.ini");
 	IniFileParser iniParser = IniFileParser.read(in);
 	ObjectMapper mapper = new ObjectMapper();
@@ -72,6 +75,9 @@
 <!-- TreeView source file -->
 <script src="http://yui.yahooapis.com/2.9.0/build/treeview/treeview-min.js" ></script>
 <script>
+
+var cookies_get='';
+
 //モジュールパターンで実装する。
 YAHOO.namespace("EGP");
 
@@ -94,12 +100,13 @@ YAHOO.EGP.BasicTree = function() {
     var buildTextNodeTree = function() {
 	    //treeのインスタンス化
 	    tree = new YAHOO.widget.TreeView("treeDiv1",treeNodes);
-	    tree.subscribe("expand", function(node) {alert("[index: "+node.index + ", label: " + node.label + "] was expanded");
+	    tree.subscribe("expand", function(node) {
 	    tree.subscribe("labelClick", function(node) {
 	        console.log(node.label);
 	        var hostUrl= 'http://localhost:8080/CatalogShopping/Catalog2.do';
 	        var param1 = node.label;
 	        document.getElementById('parameter1').value=param1;
+	        document.cookie= 'value="'+node.label+'"';
 	        document.getElementById('senddata').click();
 
 /* 	        $.ajax({
@@ -116,7 +123,11 @@ YAHOO.EGP.BasicTree = function() {
 
 
 	    });
+
+	    tree.setNodesProperty('propagateHighlightUp',true);
+	    tree.setNodesProperty('propagateHighlightDown',true);
     });
+
 
 	//treeの描画
         tree.draw();
@@ -144,6 +155,17 @@ YAHOO.util.Event.onDOMReady(
 YAHOO.util.Event.addListener(window, "load", function(){
 
 	});
+
+$(window).load(function() {
+	cookies_get = document.cookie.split("=");
+	console.log('cookies_get='+cookies_get[1]);
+
+
+});
+
+$(document).ready( function(){
+
+});
 </script>
 </head>
 <body >
