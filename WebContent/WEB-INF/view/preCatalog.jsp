@@ -7,6 +7,9 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="my" uri="/WEB-INF/mytag.tld" %>
+<script src="${pageContext.request.contextPath}/lightbox2/lightbox.js"></script>
+
+
 <%! int rcvTotalfee=0; %>
 <%
  	ShoppingDAO dao = new ShoppingDAO();
@@ -38,6 +41,16 @@ function getData() {
 }
 
 $(function() {
+
+	  $(".inline").colorbox({
+		    inline:true,
+		    width:"90%",
+		    height:"90%",
+		    opacity: 0.7
+		  });
+
+
+
 	var tmpfee = <%= rcvTotalfee %>;
 	var imgsrc = <%= imgsrc %>;
 	if(tmpfee>0)

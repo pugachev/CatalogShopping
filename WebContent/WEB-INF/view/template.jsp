@@ -5,6 +5,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <HTML>
 	<head>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/colorbox.css">
 		<script src="${pageContext.request.contextPath}/js/jquery-2.2.4.js"></script>
 		<script src="${pageContext.request.contextPath}/js/jquery.colorbox-min.js"></script>
 	<style>
